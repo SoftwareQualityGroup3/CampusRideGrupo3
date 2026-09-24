@@ -17,6 +17,6 @@ public class App {
     private static void runTeamFeatures(Fleet fleet,
                                         RentalService rentalService,
                                         FleetReport report) {
-        System.out.println("TEAM FEATURES NOT YET INTEGRATED");
+        System.out.println("Available vehicles = " + report.availableVehicleIds());
     }
 }
