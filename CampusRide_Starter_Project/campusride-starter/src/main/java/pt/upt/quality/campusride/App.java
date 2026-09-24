@@ -17,6 +17,10 @@ public class App {
     private static void runTeamFeatures(Fleet fleet,
                                         RentalService rentalService,
                                         FleetReport report) {
+        rentalService.rentVehicle("B1");
+        System.out.println("B1 available after rent = "
+                + fleet.findById("B1").isAvailable());
+        rentalService.returnVehicle("B1");
         System.out.println("TEAM FEATURES NOT YET INTEGRATED");
     }
 }
