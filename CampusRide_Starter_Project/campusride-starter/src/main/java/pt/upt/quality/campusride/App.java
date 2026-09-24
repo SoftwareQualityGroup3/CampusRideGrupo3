@@ -17,6 +17,9 @@ public class App {
     private static void runTeamFeatures(Fleet fleet,
                                         RentalService rentalService,
                                         FleetReport report) {
+        EBike eBike = new EBike("E20", 95);
+        eBike.charge(20);
+        System.out.println("E20 battery = " + eBike.getBatteryLevel());
         System.out.println("TEAM FEATURES NOT YET INTEGRATED");
     }
 }
