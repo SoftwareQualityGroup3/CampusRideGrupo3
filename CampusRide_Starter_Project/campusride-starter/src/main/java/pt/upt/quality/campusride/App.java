@@ -17,6 +17,7 @@ public class App {
     private static void runTeamFeatures(Fleet fleet,
                                         RentalService rentalService,
                                         FleetReport report) {
+        System.out.println("Available vehicles = " + report.availableVehicleIds());
 
         rentalService.rentVehicle("B1");
         System.out.println("B1 available after rent = "

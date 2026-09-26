@@ -1,6 +1,7 @@
 package pt.upt.quality.campusride;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FleetReport {
     private final Fleet fleet;
@@ -10,10 +11,15 @@ public class FleetReport {
     }
 
     public List<String> availableVehicleIds() {
-        throw new UnsupportedOperationException("availableVehicleIds not implemented");
+        return fleet.getVehicles().stream()
+                .filter(Vehicle::isAvailable)
+                .map(Vehicle::getId)
+                .collect(Collectors.toList());
     }
 
     public double estimateTotalPrice(int minutes) {
-        throw new UnsupportedOperationException("estimateTotalPrice not implemented");
+        return fleet.getVehicles().stream()
+                .mapToDouble(vehicle -> vehicle.calculatePrice(minutes))
+                .sum();
     }
 }
